@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Спасение кота</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <!-- Верхняя панель (Счет и кнопки) -->
+    <div class="hud">
+      <div class="score-board">
+        <span>Рыбки: <span id="score">0</span></span>
+        <span>Рекорд: <span id="high-score">0</span></span>
+      </div>
+      <div class="controls">
+        <button id="btn-pause" class="btn-icon" title="Пауза">⏸</button>
+        <button id="btn-restart" class="btn-icon" title="Заново">🔄</button>
+      </div>
+    </div>
+
+    <!-- Сама игра -->
+    <div class="canvas-wrapper">
+      <canvas id="gameCanvas" width="800" height="600"></canvas>
+      
+      <!-- Экран Старта -->
+      <div id="start-screen" class="overlay">
+        <h1>Спасение кота</h1>
+        <p>Собери 3 рыбки и доберись до кота!</p>
+        <p class="controls-hint">Управление: A/D или Стрелки. Прыжок: Space/W</p>
+        <button id="btn-start" class="btn-primary">Играть</button>
+      </div>
+
+      <!-- Экран Паузы -->
+      <div id="pause-screen" class="overlay hidden">
+        <h2>Пауза</h2>
+        <button id="btn-resume" class="btn-primary">Продолжить</button>
+      </div>
+
+      <!-- Экран Поражения -->
+      <div id="lose-screen" class="overlay hidden">
+        <h2 style="color: #e74c3c;">Вы проиграли!</h2>
+        <p>Кот остался голодным...</p>
+        <button id="btn-retry" class="btn-primary">Попробовать снова</button>
+      </div>
+
+      <!-- Экран Победы -->
+      <div id="win-screen" class="overlay hidden">
+        <h2 style="color: #f1c40f;">Ура! Кот спасен!</h2>
+        <p>Вы собрали все рыбки и добрались до финиша.</p>
+        <button id="btn-play-again" class="btn-primary">Играть заново</button>
+      </div>
+    </div>
+
+    <!-- Кнопки для телефона -->
+    <div class="mobile-controls" id="mobile-controls">
+      <div class="d-pad">
+        <button class="btn-touch" id="btn-left">◀</button>
+        <button class="btn-touch" id="btn-right">▶</button>
+      </div>
+      <button class="btn-touch btn-jump" id="btn-jump">Прыжок</button>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
